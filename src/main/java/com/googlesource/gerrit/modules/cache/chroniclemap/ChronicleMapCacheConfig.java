@@ -282,6 +282,7 @@ public class ChronicleMapCacheConfig {
             .put("persisted_projects", DefaultConfig.create(128, 1024, 250, 2))
             .put("pure_revert", DefaultConfig.create(55, 16, 1000, 1))
             .put("web_sessions", DefaultConfig.create(45, 221, 1000, 1))
+            .put("changes_by_project", DefaultConfig.create(36, 10240, 1000, 3))
             .build();
 
     public static long averageKeySizeFor(String configKey) {
