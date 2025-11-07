@@ -11,9 +11,9 @@ gerrit_plugin(
     name = "cache-chroniclemap",
     srcs = glob(["src/main/java/**/*.java"]),
     manifest_entries = [
-        "Gerrit-Module: com.googlesource.gerrit.modules.cache.chroniclemap.CapabilityModule",
-        "Gerrit-SshModule: com.googlesource.gerrit.modules.cache.chroniclemap.SSHCommandModule",
-        "Gerrit-HttpModule: com.googlesource.gerrit.modules.cache.chroniclemap.HttpModule",
+        "Gerrit-Module: com.gerritforge.gerrit.modules.cache.chroniclemap.CapabilityModule",
+        "Gerrit-SshModule: com.gerritforge.gerrit.modules.cache.chroniclemap.SSHCommandModule",
+        "Gerrit-HttpModule: com.gerritforge.gerrit.modules.cache.chroniclemap.HttpModule",
     ],
     resources = glob(["src/main/resources/**/*"]),
     deps = [
@@ -90,7 +90,7 @@ junit_tests(
 java_library(
     name = "chroniclemap-test-lib",
     testonly = True,
-    srcs = ["src/test/java/com/googlesource/gerrit/modules/cache/chroniclemap/TestPersistentCacheDef.java"],
+    srcs = ["src/test/java/com/gerritforge/gerrit/modules/cache/chroniclemap/TestPersistentCacheDef.java"],
     exports = PLUGIN_DEPS + PLUGIN_TEST_DEPS,
     deps = PLUGIN_DEPS + PLUGIN_TEST_DEPS,
 )
