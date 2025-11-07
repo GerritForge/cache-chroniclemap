@@ -19,7 +19,7 @@ Add the cache-chroniclemap module to `$GERRIT_SITE/etc/gerrit.config` as follows
 
 ```
 [gerrit]
-  installModule = com.googlesource.gerrit.modules.cache.chroniclemap.ChronicleMapCacheModule
+  installModule = com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheModule
 ```
 
 Note that in order to run on JDK 17 (or newer) the following parameters needs to be added
