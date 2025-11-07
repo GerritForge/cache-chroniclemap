@@ -34,7 +34,7 @@ public class TimedValueMarshallerTest {
     ObjectId id = ObjectId.fromString("1234567890123456789012345678901234567890");
     long timestamp = 1600329018L;
     TimedValueMarshaller<ObjectId> marshaller =
-        new TimedValueMarshaller<>(new TestMetricMaker(), TEST_CACHE_NAME);
+        new TimedValueMarshaller<>(TestMetricMaker.getInstance(), TEST_CACHE_NAME);
 
     final TimedValue<ObjectId> wrapped = new TimedValue<>(id, timestamp);
 
