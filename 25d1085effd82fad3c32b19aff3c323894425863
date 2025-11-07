@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d6e5d0b_3da3b672",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2025-11-07T18:11:58Z",
+      "side": 1,
+      "message": "Should this be updated to be gerrithub? Can be a follow-up change.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 68
+      },
+      "revId": "25d1085effd82fad3c32b19aff3c323894425863",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
