@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "780cb1fd_8e714eeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019121
+      },
+      "writtenOn": "2025-11-08T08:58:11Z",
+      "side": 1,
+      "message": "I guess we should also update `src/main/resources/Documentation/build.md` (it contains the following line `git clone https://gerrit.googlesource.com/modules/cache-chroniclemap`)",
+      "revId": "25d1085effd82fad3c32b19aff3c323894425863",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8d6e5d0b_3da3b672",
         "filename": "src/main/resources/Documentation/build.md",
         "patchSetId": 1
