@@ -3,6 +3,18 @@
 Non-blocking and super-fast on-disk cache libModule for [Gerrit Code Review](https://gerritcodereview.com)
 based on [ChronicleMap on-disk implementation](https://github.com/OpenHFT/Chronicle-Map).
 
+## License
+
+This project is licensed under the **Business Source License 1.1** (BSL 1.1).
+This is a "source-available" license that balances free, open-source-style access to the code
+with temporary commercial restrictions.
+
+* The full text of the BSL 1.1 is available in the [LICENSE.md](LICENSE.md) file in this
+  repository.
+* If your intended use case falls outside the **Additional Use Grant** and you require a
+  commercial license, please contact [GerritForge Sales](https://gerritforge.com/contact).
+
+
 ## How to build
 
 This libModule is built like a Gerrit in-tree plugin, using Bazelisk. See the
