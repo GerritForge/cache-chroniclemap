@@ -11,7 +11,6 @@
 
 package com.gerritforge.gerrit.modules.cache.chroniclemap;
 
-import static com.google.common.truth.Truth.assertThat;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches.MAX_ENTRIES_MULTIPLIER;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches.PERCENTAGE_SIZE_INCREASE_THRESHOLD;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches.serializedKeyLength;
@@ -20,6 +19,7 @@ import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCachesCommand.TUNED_INFIX;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults.maxBloatFactorFor;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults.maxEntriesFor;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.base.Joiner;
 import com.google.common.cache.CacheLoader;
@@ -37,6 +37,8 @@ import com.google.gerrit.server.ModuleImpl;
 import com.google.gerrit.server.cache.CacheModule;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
+import com.googlesource.gerrit.modules.cache.chroniclemap.KeyWrapper;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.Objects;

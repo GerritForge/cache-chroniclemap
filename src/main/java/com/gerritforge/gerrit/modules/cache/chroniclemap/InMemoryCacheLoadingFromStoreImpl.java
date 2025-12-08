@@ -14,6 +14,7 @@ package com.gerritforge.gerrit.modules.cache.chroniclemap;
 import com.google.common.cache.CacheStats;
 import com.google.common.cache.LoadingCache;
 import com.google.gerrit.common.Nullable;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 

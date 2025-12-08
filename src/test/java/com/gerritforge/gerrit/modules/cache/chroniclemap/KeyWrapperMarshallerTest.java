@@ -13,6 +13,7 @@ package com.gerritforge.gerrit.modules.cache.chroniclemap;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.gerrit.server.cache.serialize.ObjectIdCacheSerializer;
+import com.googlesource.gerrit.modules.cache.chroniclemap.KeyWrapper;
 import java.nio.ByteBuffer;
 import net.openhft.chronicle.bytes.Bytes;
 import org.eclipse.jgit.lib.ObjectId;

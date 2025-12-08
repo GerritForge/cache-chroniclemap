@@ -21,6 +21,8 @@ import com.google.gerrit.server.logging.Metadata;
 import com.google.gerrit.server.logging.TraceContext;
 import com.google.gerrit.server.logging.TraceContext.TraceTimer;
 import com.google.gerrit.server.util.time.TimeUtil;
+import com.googlesource.gerrit.modules.cache.chroniclemap.KeyWrapper;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Optional;

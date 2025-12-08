@@ -29,6 +29,8 @@ import com.google.gerrit.server.cache.MemoryCacheFactory;
 import com.google.gerrit.server.cache.serialize.CacheSerializer;
 import com.google.gerrit.server.cache.serialize.StringCacheSerializer;
 import com.google.inject.Inject;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValueMarshaller;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;

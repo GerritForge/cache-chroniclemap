@@ -22,6 +22,8 @@ import com.google.gerrit.server.config.GerritServerConfig;
 import com.google.gerrit.server.config.SitePaths;
 import com.google.gerrit.server.permissions.PermissionBackendException;
 import com.google.inject.Inject;
+import com.googlesource.gerrit.modules.cache.chroniclemap.KeyWrapper;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;

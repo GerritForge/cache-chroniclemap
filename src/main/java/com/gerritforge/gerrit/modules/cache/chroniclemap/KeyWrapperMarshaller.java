@@ -11,6 +11,7 @@
 package com.gerritforge.gerrit.modules.cache.chroniclemap;
 
 import com.google.gerrit.server.cache.serialize.CacheSerializer;
+import com.googlesource.gerrit.modules.cache.chroniclemap.KeyWrapper;
 import net.openhft.chronicle.bytes.Bytes;
 import net.openhft.chronicle.core.util.ReadResolvable;
 import net.openhft.chronicle.hash.serialization.BytesReader;

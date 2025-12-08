@@ -14,6 +14,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.gerrit.acceptance.TestMetricMaker;
 import com.google.gerrit.server.cache.serialize.ObjectIdCacheSerializer;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValueMarshaller;
 import java.nio.ByteBuffer;
 import net.openhft.chronicle.bytes.Bytes;
 import org.eclipse.jgit.lib.ObjectId;

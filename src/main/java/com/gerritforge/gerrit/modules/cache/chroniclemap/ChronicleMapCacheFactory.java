@@ -29,6 +29,7 @@ import com.google.gerrit.server.logging.LoggingContextAwareScheduledExecutorServ
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;

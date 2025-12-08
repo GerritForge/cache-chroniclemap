@@ -17,6 +17,7 @@ import com.google.gerrit.common.Nullable;
 import com.google.gerrit.server.cache.PersistentCacheDef;
 import com.google.gerrit.server.cache.serialize.CacheSerializer;
 import com.google.inject.TypeLiteral;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.time.Duration;
 
 class ChronicleMapCacheDefProxy<K, V> implements PersistentCacheDef<K, V> {

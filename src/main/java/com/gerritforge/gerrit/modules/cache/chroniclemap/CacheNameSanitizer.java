@@ -14,7 +14,7 @@ package com.gerritforge.gerrit.modules.cache.chroniclemap;
 import com.google.gerrit.metrics.MetricMaker;
 import java.util.regex.Pattern;
 
-class CacheNameSanitizer {
+public class CacheNameSanitizer {
   private static final Pattern METRIC_NAME_PATTERN =
       Pattern.compile("[a-zA-Z0-9_-]+([a-zA-Z0-9_-]+)*");
 
@@ -27,7 +27,7 @@ class CacheNameSanitizer {
    * MetricMaker#sanitizeMetricName(String)} is performed so that name is sanitized. This way
    * sanitization stays backward compatible but also non-typical cases are handled.
    */
-  static String sanitize(MetricMaker metricMaker, String cacheName) {
+  public static String sanitize(MetricMaker metricMaker, String cacheName) {
     if (METRIC_NAME_PATTERN.matcher(cacheName).matches()) {
       return cacheName;
     }

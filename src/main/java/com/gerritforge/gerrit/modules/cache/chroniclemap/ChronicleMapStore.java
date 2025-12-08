@@ -13,6 +13,8 @@ package com.gerritforge.gerrit.modules.cache.chroniclemap;
 
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.metrics.MetricMaker;
+import com.googlesource.gerrit.modules.cache.chroniclemap.KeyWrapper;
+import com.googlesource.gerrit.modules.cache.chroniclemap.TimedValue;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Type;
