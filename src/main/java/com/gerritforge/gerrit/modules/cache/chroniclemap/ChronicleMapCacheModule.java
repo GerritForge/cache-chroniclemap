@@ -32,6 +32,7 @@ public class ChronicleMapCacheModule extends LifecycleModule {
 
   @Override
   protected void configure() {
+    ChronicleMapCompatAliases.ensureRegistered();
     factory(ChronicleMapCacheConfig.Factory.class);
     bind(PersistentCacheFactory.class).to(ChronicleMapCacheFactory.class);
     listener().to(ChronicleMapCacheFactory.class);

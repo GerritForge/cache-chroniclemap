@@ -59,6 +59,7 @@ junit_tests(
         ":cache-chroniclemap__plugin",
         ":chroniclemap-test-lib",
         "@chronicle-bytes//jar",
+        "@chronicle-core//jar",
     ],
 )
 
