@@ -30,7 +30,6 @@ gerrit_plugin(
         "@chronicle-threads//jar",
         "@chronicle-values//jar",
         "@chronicle-wire//jar",
-        "@commons-lang3//jar",
         "@dev-jna//jar",
         "@error-prone-annotations//jar",
         "@javapoet//jar",
