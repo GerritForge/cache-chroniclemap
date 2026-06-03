@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dcf12a8_bd359215",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 0,
+      "message": "nit: unrelated refactoring?\nCan the dry-out of the JVM flags be done as a follow-up change?",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 54
+      },
+      "revId": "e60b88e4b58082ab47801535504ea0fd6fe8285d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

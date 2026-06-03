@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "327a78c0_d78911db",
+        "filename": ".bazelversion",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 1,
+      "message": "Do we always need to keep this in sync with the Gerrit .bazelversion?\nIf so, is there any best-practice to keep them in-sync?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47d612de_ee1651b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 1,
+      "message": "This is failing at runtime for me with:\n\n```\n  RuntimeException: Symbol$CompletionFailure: class file for NotNull not found\n  Caused by: Symbol$CompletionFailure: class file for NotNull not found\n```\n\nThe plugin jar is missing `org.jetbrains.annotations.NotNull`.\n\nOpenHFT `chronicle-values` and compiler POMs declare `org.jetbrains:annotations`[1] [2], but the built plugin JAR has no `org/jetbrains/annotations/*`.\n\nPerhaps we need to add org.jetbrains:annotations explicitly?\n\n[1] https://repo1.maven.org/maven2/net/openhft/chronicle-values/2.25ea4/chronicle-values-2.25ea4.pom\n[2] https://repo1.maven.org/maven2/net/openhft/compiler/2.25ea3/compiler-2.25ea3.pom",
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47e7b534_fb23def3",
+        "filename": "MODULE.bazel.lock",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 1,
+      "message": "Consider adding a short note to the project’s build.md documentation explaining the repinning/update command for Maven deps and when MODULE.bazel.lock changes are expected.\n\nIf there is a generic documentation for this could we point to it?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fdacb636_0389e262",
+        "filename": "cache-chroniclemap_third_party_runtime_jars.allowlist.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 1,
+      "message": "Is this file auto-generated? If so, can you document how?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "38a7d257_c8e1825c",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 1,
+      "message": "How does one _merge_ the contents of the `MODULE.bazel`?\nJust _appending_ or there\u0027s any particular logic?\n\nSince these instructions are likely relevant for every plugin, is there some generic centralized documentation we can point to?",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c31664f_a8857153",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-03T17:34:48Z",
+      "side": 1,
+      "message": "nit: unrelated formatting?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 28
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
