@@ -1,0 +1,63 @@
+module(name = "gerrit-cache-chroniclemap")
+
+bazel_dep(name = "rules_java", version = "9.3.0")
+bazel_dep(name = "rules_jvm_external", version = "7.0")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+
+# Chronicle artifacts are aligned to the chronicle-bom 2.25ea62 BOM:
+# https://github.com/OpenHFT/OpenHFT/blob/chronicle-bom-2.25ea62/chronicle-bom/pom.xml
+CHRONICLE_MAP_VER = "3.25ea6"
+
+CHRONICLE_CORE_VER = "2.25ea15"
+
+CHRONICLE_WIRE_VER = "2.25ea16"
+
+CHRONICLE_BYTES_VER = "2.25ea11"
+
+CHRONICLE_ALGORITHMS_VER = "2.25ea0"
+
+CHRONICLE_VALUES_VER = "2.25ea4"
+
+CHRONICLE_THREADS_VER = "2.25ea7"
+
+CHRONICLE_COMPILER_VER = "2.25ea3"
+
+CHRONICLE_AFFINITY_VER = "3.23.3"
+
+CHRONICLE_POSIX_VER = "2.25ea0"
+
+JNA_VER = "5.5.0"
+
+maven.install(
+    name = "cache-chroniclemap_plugin_deps",
+    artifacts = [
+        "com.squareup:javapoet:1.13.0",
+        "net.java.dev.jna:jna:" + JNA_VER,
+        "net.java.dev.jna:jna-platform:" + JNA_VER,
+        "net.openhft:affinity:" + CHRONICLE_AFFINITY_VER,
+        "net.openhft:chronicle-algorithms:" + CHRONICLE_ALGORITHMS_VER,
+        "net.openhft:chronicle-bytes:" + CHRONICLE_BYTES_VER,
+        "net.openhft:chronicle-core:" + CHRONICLE_CORE_VER,
+        "net.openhft:chronicle-map:" + CHRONICLE_MAP_VER,
+        "net.openhft:chronicle-threads:" + CHRONICLE_THREADS_VER,
+        "net.openhft:chronicle-values:" + CHRONICLE_VALUES_VER,
+        "net.openhft:chronicle-wire:" + CHRONICLE_WIRE_VER,
+        "net.openhft:compiler:" + CHRONICLE_COMPILER_VER,
+        "net.openhft:posix:" + CHRONICLE_POSIX_VER,
+    ],
+    duplicate_version_warning = "error",
+    excluded_artifacts = [
+        "org.ow2.asm:asm",
+        "org.slf4j:slf4j-api",
+    ],
+    fail_if_repin_required = True,
+    fail_on_missing_checksum = True,
+    fetch_sources = True,
+    lock_file = "//:cache-chroniclemap_plugin_deps.lock.json",
+    repositories = [
+        "https://repo1.maven.org/maven2",
+    ],
+    version_conflict_policy = "pinned",
+)
+use_repo(maven, "cache-chroniclemap_plugin_deps")
