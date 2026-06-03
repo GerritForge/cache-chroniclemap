@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8dc9797c_02cee14d",
+        "filename": ".bazelversion",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-03T21:50:57Z",
+      "side": 1,
+      "message": "The plugin is normally built in-tree from Gerrit, so the Gerrit repository’s .bazelversion is the authoritative one for regular builds/tests.\n\nThe plugin-local .bazelversion is only useful for the occasional commands that I run from the plugin directory itself, for example regenerating the plugin MODULE.bazel.lock:\n\n```\n  bazelisk mod deps --lockfile_mode\u003dupdate\n```\n\nWithout a local .bazelversion, bazelisk falls back to its default/version selection outside the Gerrit workspace, which can regenerate the lock file with a different Bazel version than Gerrit uses.\n\nSo yes, if we keep this file, it should stay in sync with Gerrit’s .bazelversion. There is no automatic sync mechanism here; the practical alternatives are:\n\n* keep the plugin .bazelversion and update it whenever Gerrit’s .bazelversion changes, or\n* drop the plugin .bazelversion and require explicit version selection for standalone maintenance commands, e.g.\n\n```\n  USE_BAZELISK_VERSION\u003d9.1.0 bazelisk mod deps --lockfile_mode\u003dupdate\n```\n\nI kept the file to make plugin-local lockfile regeneration reproducible and less dependent on the developer’s bazelisk default.",
+      "parentUuid": "327a78c0_d78911db",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47d612de_ee1651b6",
@@ -41,6 +65,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "12a1d98e_8b331fbd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-03T21:50:57Z",
+      "side": 1,
+      "message": "Thanks for the test. I assumed these annotation jars were only needed at compile time and excluded them from the final plugin artifact.\n\nIt turns out Chronicle Values performs runtime code generation/compilation, and that generated/compiled code references the annotations. So the annotations jar must be present on the plugin runtime classpath as well.\n\nDone.",
+      "parentUuid": "47d612de_ee1651b6",
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47e7b534_fb23def3",
@@ -54,6 +96,30 @@
       "writtenOn": "2026-06-03T17:34:48Z",
       "side": 1,
       "message": "Consider adding a short note to the project’s build.md documentation explaining the repinning/update command for Maven deps and when MODULE.bazel.lock changes are expected.\n\nIf there is a generic documentation for this could we point to it?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7f9cf4c4_753cfbb0",
+        "filename": "MODULE.bazel.lock",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-03T21:50:57Z",
+      "side": 1,
+      "message": "It\u0027s documented in man Gerrit repository in Documentation/dev-bazel.txt.\n\nI also added recently something similar in `gitiles`: [1].\n\n[1] https://gerrit-review.googlesource.com/c/gitiles/+/588625/4/Documentation/developer-guide.md#37",
+      "parentUuid": "47e7b534_fb23def3",
       "range": {
         "startLine": 1,
         "startChar": 0,
@@ -87,6 +153,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6db95343_24083cd0",
+        "filename": "cache-chroniclemap_third_party_runtime_jars.allowlist.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-03T21:50:57Z",
+      "side": 1,
+      "message": "It is auto checked, and if ih was wrong content, the build process tell you, in the error message what to do: [1].\n\n[1] https://paste.opendev.org/show/bdRN6bZMRSfBmTXdlfPw/",
+      "parentUuid": "fdacb636_0389e262",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 8
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38a7d257_c8e1825c",
@@ -110,6 +200,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31fddba8_a584d300",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-03T21:50:57Z",
+      "side": 1,
+      "message": "Normally you are building only one single plugin with external dependencies. So that there os no merge at all. You just replace the empty external_plugin_deps.MODULE.bazel in gerrit with the version from cache-chroniclemap.\n\nThe statement is only relevant in case you are building two or more plugins at once.\n\nThe process is documented in gerrit core, see: `Documentation/dev-build-plugins.txt`:\n\n\nPlugins may provide their own `external_plugin_deps.MODULE.bazel`\nfragment containing these declarations. When building locally, the\nfragment can be linked into the Gerrit tree:\n\n```\ncd gerrit/plugins\nrm external_plugin_deps.MODULE.bazel\nln -s oauth/external_plugin_deps.MODULE.bazel external_plugin_deps.MODULE.bazel\n```\n\nThis makes the plugin\u0027s Bazel module and its plugin-scoped Maven\nrepository visible to Gerrit\u0027s root module.\n\nTo support multiple plugins, include their `external_plugin_deps.MODULE.bazel`\nfiles.\n\nFor example, to import external dependencies for the `oauth` and `javamelody`\nplugins, add the following lines to `plugins/external_plugin_deps.MODULE.bazel`:\n\n```\ninclude(\"//plugins/javamelody:external_plugin_deps.MODULE.bazel\")\ninclude(\"//plugins/oauth:external_plugin_deps.MODULE.bazel\")\n```\n\nRemoved the statement about merging.\nDone.",
+      "parentUuid": "38a7d257_c8e1825c",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3c31664f_a8857153",
@@ -123,6 +237,30 @@
       "writtenOn": "2026-06-03T17:34:48Z",
       "side": 1,
       "message": "nit: unrelated formatting?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 28
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a87111e_e2b05b1e",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-03T21:50:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c31664f_a8857153",
       "range": {
         "startLine": 33,
         "startChar": 0,
