@@ -1,3 +1,9 @@
+# Bazel output files
+/bazel-bin
+/bazel-cache-chroniclemap
+/bazel-out
+/bazel-testlogs
+
 # Compiled class file
 *.class
 
