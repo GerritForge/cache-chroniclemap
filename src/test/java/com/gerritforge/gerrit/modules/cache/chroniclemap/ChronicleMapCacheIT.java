@@ -69,7 +69,7 @@ public class ChronicleMapCacheIT extends AbstractDaemonTest {
     input.username = "foo";
 
     assertThat(accountCache.getByUsername(input.username)).isEmpty();
-    adminRestSession.put("/accounts/" + input.username, input);
+    var unused = adminRestSession.put("/accounts/" + input.username, input);
 
     assertThat(accountCache.getByUsername(input.username)).isPresent();
   }

@@ -20,6 +20,61 @@ with temporary commercial restrictions.
 This libModule is built like a Gerrit in-tree plugin, using Bazelisk. See the
 [build instructions](src/main/resources/Documentation/build.md) for more details.
 
+### Updating Bazel modules
+
+When the plugin's Bazel module dependencies change, regenerate the Bazel
+module lockfile to ensure all module versions are recorded and reproducible.
+
+Example:
+
+```bash
+  ln -sf `pwd`/.bazelversion plugins/cache-chroniclemap
+  cd plugins/cache-chroniclemap
+  bazelisk mod deps --lockfile_mode=update
+```
+
+This updates `MODULE.bazel.lock` with the currently resolved module versions.
+
+### Pinning external dependencies
+
+When the plugin's external dependencies are updated, regenerate the dependency
+lockfile to pin the new versions.
+
+Example:
+
+```bash
+  ln -sf `pwd`/.bazelversion plugins/cache-chroniclemap
+  cd plugins/cache-chroniclemap
+  REPIN=1 bazelisk run @cache-chroniclemap_plugin_deps//:pin
+```
+
+This updates `cache-chroniclemap_plugin_deps.lock.json` with the latest pinned
+dependency versions.
+
+### Cleaning Bazel Output Directories
+
+After updating Bazel modules or external dependencies, remove Bazel output
+directories before building the plugin in the Gerrit workspace:
+
+Example:
+
+```bash
+  ln -sf `pwd`/.bazelversion plugins/cache-chroniclemap
+  cd plugins/cache-chroniclemap
+  bazelisk clean --expunge
+```
+
+This avoids intermittent build and test failures caused by stale Bazel output
+trees. In particular, wildcard test targets such as:
+
+Example:
+
+```
+  bazelisk test plugins/cache-chroniclemap/...
+```
+
+may fail unexpectedly if the output directories are not cleaned.
+
 
 ## Setup
 
