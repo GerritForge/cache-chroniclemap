@@ -23,6 +23,7 @@ import com.google.inject.Singleton;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import net.openhft.compiler.CompilerUtils;
 import org.eclipse.jgit.lib.Config;
 
 @ModuleImpl(name = CacheModule.PERSISTENT_MODULE)
@@ -33,10 +34,21 @@ public class ChronicleMapCacheModule extends LifecycleModule {
   @Override
   protected void configure() {
     ChronicleMapCompatAliases.ensureRegistered();
+    // TODO(davido): Remove when this upstream issue is fixed:
+    // https://github.com/OpenHFT/Chronicle-Values/issues/177
+    CompilerUtils.addClassPath(moduleJarPath());
     factory(ChronicleMapCacheConfig.Factory.class);
     bind(PersistentCacheFactory.class).to(ChronicleMapCacheFactory.class);
     listener().to(ChronicleMapCacheFactory.class);
     bind(CachesWithoutChronicleMapConfigMetric.class).asEagerSingleton();
+  }
+
+  private static String moduleJarPath() {
+    return ChronicleMapCacheModule.class
+        .getProtectionDomain()
+        .getCodeSource()
+        .getLocation()
+        .getPath();
   }
 
   @Provides
