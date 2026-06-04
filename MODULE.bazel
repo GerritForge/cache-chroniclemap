@@ -5,27 +5,27 @@ bazel_dep(name = "rules_jvm_external", version = "7.0")
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 
-# Chronicle artifacts are aligned to the chronicle-bom 2.25ea62 BOM:
-# https://github.com/OpenHFT/OpenHFT/blob/chronicle-bom-2.25ea62/chronicle-bom/pom.xml
-CHRONICLE_MAP_VER = "3.25ea6"
+# Chronicle artifacts are aligned to the chronicle-bom 2026.2 BOM:
+# https://repo1.maven.org/maven2/net/openhft/chronicle-bom/2026.2/chronicle-bom-2026.2.pom
+CHRONICLE_MAP_VER = "2026.0"
 
-CHRONICLE_CORE_VER = "2.25ea15"
+CHRONICLE_CORE_VER = "2026.2"
 
-CHRONICLE_WIRE_VER = "2.25ea16"
+CHRONICLE_WIRE_VER = "2026.2"
 
-CHRONICLE_BYTES_VER = "2.25ea11"
+CHRONICLE_BYTES_VER = "2026.2"
 
-CHRONICLE_ALGORITHMS_VER = "2.25ea0"
+CHRONICLE_ALGORITHMS_VER = "2026.2"
 
-CHRONICLE_VALUES_VER = "2.25ea4"
+CHRONICLE_VALUES_VER = "2026.2"
 
-CHRONICLE_THREADS_VER = "2.25ea7"
+CHRONICLE_THREADS_VER = "2026.2"
 
-CHRONICLE_COMPILER_VER = "2.25ea3"
+CHRONICLE_COMPILER_VER = "2026.2"
 
-CHRONICLE_AFFINITY_VER = "3.23.3"
+CHRONICLE_AFFINITY_VER = "2026.2"
 
-CHRONICLE_POSIX_VER = "2.25ea0"
+CHRONICLE_POSIX_VER = "2026.2"
 
 JNA_VER = "5.5.0"
 
