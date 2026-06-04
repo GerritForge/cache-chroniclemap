@@ -19,6 +19,7 @@ import java.lang.reflect.Type;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import net.openhft.chronicle.bytes.BytesStore;
@@ -128,6 +129,14 @@ class ChronicleMapStore<K, V> implements ChronicleMap<KeyWrapper<K>, TimedValue<
   @Override
   public TimedValue<V> put(KeyWrapper<K> key, TimedValue<V> value) {
     return store.put(key, value);
+  }
+
+  @Override
+  public TimedValue<V> safePut(
+      KeyWrapper<K> key,
+      TimedValue<V> value,
+      BiConsumer<KeyWrapper<K>, TimedValue<V>> onFailCallback) {
+    return store.safePut(key, value, onFailCallback);
   }
 
   @Override
