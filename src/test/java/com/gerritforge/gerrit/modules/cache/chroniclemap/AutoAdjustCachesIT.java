@@ -11,7 +11,6 @@
 
 package com.gerritforge.gerrit.modules.cache.chroniclemap;
 
-import static com.google.common.truth.Truth.assertThat;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches.MAX_ENTRIES_MULTIPLIER;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches.PERCENTAGE_SIZE_INCREASE_THRESHOLD;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches.serializedKeyLength;
@@ -20,6 +19,7 @@ import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCaches
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.AutoAdjustCachesCommand.TUNED_INFIX;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults.maxBloatFactorFor;
 import static com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults.maxEntriesFor;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.base.Joiner;
 import com.google.common.cache.CacheLoader;
@@ -35,9 +35,12 @@ import com.google.gerrit.acceptance.config.GerritConfig;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.server.ModuleImpl;
 import com.google.gerrit.server.cache.CacheModule;
+import com.google.gerrit.server.config.SitePaths;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 import java.util.Set;
@@ -93,7 +96,13 @@ public class AutoAdjustCachesIT extends LightweightPluginDaemonTest {
       persist(TEST_CACHE_NAME, String.class, String.class)
           .loader(TestCacheLoader.class)
           .version(TEST_CACHE_VERSION);
-      install(new ChronicleMapCacheModule());
+      try {
+        Path tmpSite = Files.createTempDirectory("cache-chroniclemap-test");
+        tmpSite.toFile().deleteOnExit();
+        install(new ChronicleMapCacheModule(new SitePaths(tmpSite)));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
     }
   }
 
