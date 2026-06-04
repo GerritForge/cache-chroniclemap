@@ -18,7 +18,11 @@ import com.google.gerrit.acceptance.UseLocalDisk;
 import com.google.gerrit.entities.Project;
 import com.google.gerrit.extensions.api.accounts.AccountInput;
 import com.google.gerrit.server.cache.PersistentCacheFactory;
+import com.google.gerrit.server.config.SitePaths;
 import com.google.inject.Inject;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import org.junit.Test;
 
 @UseLocalDisk
@@ -29,7 +33,13 @@ public class ChronicleMapCacheIT extends AbstractDaemonTest {
 
   @Override
   public com.google.inject.Module createModule() {
-    return new ChronicleMapCacheModule();
+    try {
+      Path tmpSite = Files.createTempDirectory("cache-chroniclemap-test");
+      tmpSite.toFile().deleteOnExit();
+      return new ChronicleMapCacheModule(new SitePaths(tmpSite));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   @Test

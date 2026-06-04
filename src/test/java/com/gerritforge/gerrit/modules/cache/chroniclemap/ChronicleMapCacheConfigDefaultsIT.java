@@ -13,11 +13,15 @@ package com.gerritforge.gerrit.modules.cache.chroniclemap;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults;
 import com.google.gerrit.acceptance.AbstractDaemonTest;
 import com.google.gerrit.acceptance.UseLocalDisk;
 import com.google.gerrit.acceptance.UseSsh;
 import com.google.gerrit.acceptance.config.GerritConfig;
-import com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults;
+import com.google.gerrit.server.config.SitePaths;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Set;
 import org.junit.Test;
 
@@ -29,7 +33,20 @@ public class ChronicleMapCacheConfigDefaultsIT extends AbstractDaemonTest {
     // CacheSerializers is accumulating cache names from different test executions in CI therefore
     // it has to be cleared before this test
     CacheSerializers.clear();
-    return new ChronicleMapCacheModule();
+    // SitePaths is only consulted to locate the libModule JAR for chronicle-values'
+    // runtime compiler classpath. In tests the JAR is on the test classpath, so a
+    // fresh empty site path is sufficient; configure() skips registration when the
+    // derived JAR path doesn't exist on disk. Use Files.createTempDirectory (honors
+    // the Bazel sandbox's java.io.tmpdir) rather than a literal "/tmp" — on shared
+    // CI boxes /tmp/lib/cache-chroniclemap.jar may actually exist from a real
+    // deployment and collide with the mock.
+    try {
+      Path tmpSite = Files.createTempDirectory("cache-chroniclemap-test");
+      tmpSite.toFile().deleteOnExit();
+      return new ChronicleMapCacheModule(new SitePaths(tmpSite));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   @Test
