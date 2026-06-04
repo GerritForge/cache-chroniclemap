@@ -45,6 +45,13 @@ maven.install(
         "net.openhft:chronicle-wire:" + CHRONICLE_WIRE_VER,
         "net.openhft:compiler:" + CHRONICLE_COMPILER_VER,
         "net.openhft:posix:" + CHRONICLE_POSIX_VER,
+        # chronicle's parent POM marks this `provided`, so rules_jvm_external
+        # filters it out of transitive resolution. Pin explicitly: chronicle-
+        # values invokes javac at runtime to generate value-type subclasses and
+        # needs the annotation classes on the plugin classpath to complete
+        # symbol resolution on inherited @NotNull/@Nullable signatures
+        # (Java 25's javac is strict; Java 21 tolerated the missing symbol).
+        "org.jetbrains:annotations:24.1.0",
     ],
     duplicate_version_warning = "error",
     excluded_artifacts = [

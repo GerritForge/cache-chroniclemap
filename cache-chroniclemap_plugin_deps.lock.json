@@ -14,6 +14,7 @@
     "net.openhft:chronicle-wire": -1541440720,
     "net.openhft:compiler": -1090990760,
     "net.openhft:posix": 774031683,
+    "org.jetbrains:annotations": 1576581451,
     "org.ow2.asm:asm": -29138462,
     "org.slf4j:slf4j-api": 2145585153,
     "repositories": -1949687017
@@ -57,7 +58,9 @@
     "net.openhft:compiler": 1159398008,
     "net.openhft:compiler:jar:sources": -1050894907,
     "net.openhft:posix": -1085969586,
-    "net.openhft:posix:jar:sources": 550985803
+    "net.openhft:posix:jar:sources": 550985803,
+    "org.jetbrains:annotations": -758005899,
+    "org.jetbrains:annotations:jar:sources": -938645
   },
   "artifacts": {
     "com.github.jnr:jffi": {
@@ -193,6 +196,13 @@
         "sources": "a7f67fa9b3b3c4544bf7398f81c47507aa4a723a9e2a2bd856c3edff050edefd"
       },
       "version": "2.25ea0"
+    },
+    "org.jetbrains:annotations": {
+      "shasums": {
+        "jar": "27a770dc7ce50500918bb8c3c0660c98290630ec796b5e3cf6b90f403b3033c6",
+        "sources": "0590a3ec06b522b4aae684ddb63c063cd11bd547fd9baaa5e71f6b020e2a7df4"
+      },
+      "version": "24.1.0"
     }
   },
   "dependencies": {
@@ -505,6 +515,10 @@
       "net.openhft.posix.internal.jnr",
       "net.openhft.posix.internal.noop",
       "net.openhft.posix.internal.raw"
+    ],
+    "org.jetbrains:annotations": [
+      "org.intellij.lang.annotations",
+      "org.jetbrains.annotations"
     ]
   },
   "repositories": {
@@ -547,7 +561,9 @@
       "net.openhft:compiler",
       "net.openhft:compiler:jar:sources",
       "net.openhft:posix",
-      "net.openhft:posix:jar:sources"
+      "net.openhft:posix:jar:sources",
+      "org.jetbrains:annotations",
+      "org.jetbrains:annotations:jar:sources"
     ]
   },
   "services": {
