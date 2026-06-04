@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d2bb6de_39e4f01e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-04T22:40:08Z",
+      "side": 1,
+      "message": "Thanks, I\u0027ve implemented a fix here: [1].\n\n[1] https://review.gerrithub.io/c/GerritForge/cache-chroniclemap/+/1238563",
+      "revId": "afcbbcf8992530502fc6fbce411f828a808123d3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
