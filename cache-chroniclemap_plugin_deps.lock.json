@@ -4,16 +4,16 @@
     "com.squareup:javapoet": 1762437360,
     "net.java.dev.jna:jna": -2013574656,
     "net.java.dev.jna:jna-platform": 1737093572,
-    "net.openhft:affinity": 1505762044,
-    "net.openhft:chronicle-algorithms": -1186659704,
-    "net.openhft:chronicle-bytes": -1868305705,
-    "net.openhft:chronicle-core": 991781077,
-    "net.openhft:chronicle-map": 43759669,
-    "net.openhft:chronicle-threads": 327532418,
-    "net.openhft:chronicle-values": -992409398,
-    "net.openhft:chronicle-wire": -1541440720,
-    "net.openhft:compiler": -1090990760,
-    "net.openhft:posix": 774031683,
+    "net.openhft:affinity": 2136082337,
+    "net.openhft:chronicle-algorithms": 1703690615,
+    "net.openhft:chronicle-bytes": -1294234910,
+    "net.openhft:chronicle-core": 217938780,
+    "net.openhft:chronicle-map": -852234929,
+    "net.openhft:chronicle-threads": 1190839076,
+    "net.openhft:chronicle-values": -1936148615,
+    "net.openhft:chronicle-wire": -1878903498,
+    "net.openhft:compiler": 1881691658,
+    "net.openhft:posix": 1489844060,
     "org.jetbrains:annotations": 1576581451,
     "org.ow2.asm:asm": -29138462,
     "org.slf4j:slf4j-api": 2145585153,
@@ -37,28 +37,28 @@
     "net.java.dev.jna:jna-platform": 474356401,
     "net.java.dev.jna:jna-platform:jar:sources": 593955030,
     "net.java.dev.jna:jna:jar:sources": 1978307549,
-    "net.openhft:affinity": -1126203994,
-    "net.openhft:affinity:jar:sources": -495492201,
-    "net.openhft:chronicle-algorithms": 610363347,
-    "net.openhft:chronicle-algorithms:jar:sources": 525585840,
-    "net.openhft:chronicle-analytics": -1765043907,
-    "net.openhft:chronicle-analytics:jar:sources": -2101017201,
-    "net.openhft:chronicle-bytes": -415395029,
-    "net.openhft:chronicle-bytes:jar:sources": 1747237312,
-    "net.openhft:chronicle-core": 720905967,
-    "net.openhft:chronicle-core:jar:sources": 1100681699,
-    "net.openhft:chronicle-map": -1047509020,
-    "net.openhft:chronicle-map:jar:sources": -1554664640,
-    "net.openhft:chronicle-threads": -1101616076,
-    "net.openhft:chronicle-threads:jar:sources": 314239448,
-    "net.openhft:chronicle-values": -112106967,
-    "net.openhft:chronicle-values:jar:sources": 410069321,
-    "net.openhft:chronicle-wire": -647783207,
-    "net.openhft:chronicle-wire:jar:sources": 952834786,
-    "net.openhft:compiler": 1159398008,
-    "net.openhft:compiler:jar:sources": -1050894907,
-    "net.openhft:posix": -1085969586,
-    "net.openhft:posix:jar:sources": 550985803,
+    "net.openhft:affinity": -344460738,
+    "net.openhft:affinity:jar:sources": 56094969,
+    "net.openhft:chronicle-algorithms": 1524040216,
+    "net.openhft:chronicle-algorithms:jar:sources": 683695915,
+    "net.openhft:chronicle-analytics": 554045220,
+    "net.openhft:chronicle-analytics:jar:sources": -1525082799,
+    "net.openhft:chronicle-bytes": -1850207214,
+    "net.openhft:chronicle-bytes:jar:sources": -501266680,
+    "net.openhft:chronicle-core": 1673420102,
+    "net.openhft:chronicle-core:jar:sources": 1207958455,
+    "net.openhft:chronicle-map": 374021527,
+    "net.openhft:chronicle-map:jar:sources": 2044771047,
+    "net.openhft:chronicle-threads": -1579094308,
+    "net.openhft:chronicle-threads:jar:sources": 383354270,
+    "net.openhft:chronicle-values": -1555605275,
+    "net.openhft:chronicle-values:jar:sources": 879853321,
+    "net.openhft:chronicle-wire": -288557817,
+    "net.openhft:chronicle-wire:jar:sources": -2008823048,
+    "net.openhft:compiler": 1182088560,
+    "net.openhft:compiler:jar:sources": 1635320777,
+    "net.openhft:posix": 1599503045,
+    "net.openhft:posix:jar:sources": -776695915,
     "org.jetbrains:annotations": -758005899,
     "org.jetbrains:annotations:jar:sources": -938645
   },
@@ -122,80 +122,80 @@
     },
     "net.openhft:affinity": {
       "shasums": {
-        "jar": "969e4b4ad761e34f3c5d59fe173bba08623bbf4e9002bc567665626886f01928",
-        "sources": "2a4574205bcda2d431873f56145ea0a38e854410731b13a9e62bb50990bdf453"
+        "jar": "76c0f0e4b4667b00bfaa195fdc10f44bf467acdf0142ddaeccfd2f0547833450",
+        "sources": "c9cf5c382fddd5be4a66060b180d9b61fa0c107a19b973ebd0f38006bda24b3b"
       },
-      "version": "3.23.3"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-algorithms": {
       "shasums": {
-        "jar": "f8c950c0a05f71695b34c126d370fa239bd2a3cea10e3bdc5a83ebab19f34685",
-        "sources": "3e9422c4460e8e69a74201eba26c5d4e7703eb520dc7fd81ef16d94be044b36d"
+        "jar": "e96db3eb34abe8714a958a6a4d2a8205bfa751039e1c4fc55ac777ee333ef0ec",
+        "sources": "ceaf02d8db0384d9e7a1db132e76e287a4cefe0cd2a6636b403274486f24e753"
       },
-      "version": "2.25ea0"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-analytics": {
       "shasums": {
-        "jar": "1e243b7a832b52f847f798915a0fbe0904b5d6f13a0a30b2a5f9ab94842c12ca",
-        "sources": "adffd5a5ecbe16442aae1a60dad626dfbbc8526cc781eb67d20596ee6bc5d3ea"
+        "jar": "87ed2df17addd6953e879f6561b4692b98bed1ff3fce206ca2a1e934f5bdc346",
+        "sources": "ca424773a66556c08ca0e09ea9e0c9d37638ebb417cd7e721b52117625dcbe83"
       },
-      "version": "2.25ea0"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-bytes": {
       "shasums": {
-        "jar": "5a81c8c82e3692a11ad4a8dc9e828e8b60683c8c6b6179ddc789ed57ba58e5b8",
-        "sources": "08e1ff17cedb9fadb9a3700981b5cd654fd2ed9f8531395ae53c5d74f5abfbe3"
+        "jar": "d5e008e1ce0c172229cd48172605d7dd6af669366c18f8ed200d887cbf53d970",
+        "sources": "4a217a9017287321129208d32e35f448a78251ca60dee2b5ec146454afff85d0"
       },
-      "version": "2.25ea11"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-core": {
       "shasums": {
-        "jar": "af3b3a73a640149b25f7c32018cdca0bf223ed648363501adfb5d1a134c435b3",
-        "sources": "462a4c16a45219c59884b6c430a7bf26786559dc750b2639c524e0880ed7451a"
+        "jar": "4839521c23c6d61dcb89a2eb8678f91d66d5b2467baf653f4dfa65336827da1c",
+        "sources": "455aadf3e358e0ffd23f95c65d30017dc16691a11c4bdc6b17de5bd3131d93b8"
       },
-      "version": "2.25ea15"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-map": {
       "shasums": {
-        "jar": "0b2c03d437fdc7d7e9084019f547fcd244ee973fe261d4bfc6dfbd1f4ec0fca1",
-        "sources": "7d3aceaba90f58b88d9c0cbbf610ffeb0833534b1e6669bd092f5e9dc50e8b41"
+        "jar": "5e62f5a8f4f30b63b2c27d9d6a1cb38b5e9efd54a3f099b5d81d5439128a81fe",
+        "sources": "3dc8b3254a8c0535b446eaa6cb234ca2d2f0a94b106de24400bd719d13f82e71"
       },
-      "version": "3.25ea6"
+      "version": "2026.0"
     },
     "net.openhft:chronicle-threads": {
       "shasums": {
-        "jar": "5f614ba7dc79b10022dbb9720beee9bdd0bacceb852a32896510f65bc66af619",
-        "sources": "202ea463c9d09b3100d443411d70e7ea7d95f5889e9f862441e3332e6494f124"
+        "jar": "2f577a9921159133435fc33665e72cb5165443366e44a75f27753e62e1f3be77",
+        "sources": "b7bf8d202dfa01269723e7a61483c1be065394a41759b4381f34c76b38dc7465"
       },
-      "version": "2.25ea7"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-values": {
       "shasums": {
-        "jar": "0d7cc1280fba9b667bcc9726efb4c424239823355d9111fdb86775ff7e1044b6",
-        "sources": "03aa30f1c5c8e1e1804b591c3adc14bf6805229818d79ab560244bbf5343b07b"
+        "jar": "d3ea9b79cb3df028a16e8223fe2293203c09f48342006564189ebae255c7178e",
+        "sources": "5a529b57ae0d75e5740c402511f040af3757f6f54b4ce46df928e19b2805bbe7"
       },
-      "version": "2.25ea4"
+      "version": "2026.2"
     },
     "net.openhft:chronicle-wire": {
       "shasums": {
-        "jar": "f90568c726ad2577cd123ab28f1cd8cd7c8357cabe3eb7eb141e654b31bee550",
-        "sources": "cd79e5c418f68a6d77c9102a97358343f455d122707e62cf4cfcb19716cadc4e"
+        "jar": "a700cf741012bcbf3655c12470db7f23aa2ac4b7e6ceeece05a9ae994ea9b056",
+        "sources": "0070308cdbcf4eed2cd3a1cd25a4424774012c73f523a920e6ba64ef38cf9e87"
       },
-      "version": "2.25ea16"
+      "version": "2026.2"
     },
     "net.openhft:compiler": {
       "shasums": {
-        "jar": "9e204800034f46a65e3fde4982a3ddf905f8bb45e6a060357fab3d58e51c78e1",
-        "sources": "7e5beed67ee3259c6c3c812fee02c3473fd7e4031accfddf5e294393321bd48a"
+        "jar": "0985b6e37fb7ab8216950eae31636ee46b47c52ec35ea42c3f572aa096dbd6b5",
+        "sources": "c5f2315c1484f176c54b6b0d8481cb424a6d615452ee122b614e5243830e5a0b"
       },
-      "version": "2.25ea3"
+      "version": "2026.2"
     },
     "net.openhft:posix": {
       "shasums": {
-        "jar": "5d8c32c7a2699a9d9aba7fda92a8ddfd6b7abc95787869ecf92262ee59527a8e",
-        "sources": "a7f67fa9b3b3c4544bf7398f81c47507aa4a723a9e2a2bd856c3edff050edefd"
+        "jar": "2e8ffca67311d94237f41d5caa9a4f6ae1a518c1ccb05ddefb0387dd5b68265a",
+        "sources": "f3ff763abace76ed1e2c236225846f5d0fa58cbc62998678c2284dec2a2de99a"
       },
-      "version": "2.25ea0"
+      "version": "2026.2"
     },
     "org.jetbrains:annotations": {
       "shasums": {
@@ -222,6 +222,9 @@
     "net.openhft:chronicle-algorithms": [
       "net.openhft:chronicle-bytes",
       "net.openhft:chronicle-core"
+    ],
+    "net.openhft:chronicle-analytics": [
+      "org.jetbrains:annotations"
     ],
     "net.openhft:chronicle-bytes": [
       "net.openhft:chronicle-core",
@@ -431,8 +434,7 @@
       "net.openhft.chronicle.core.threads",
       "net.openhft.chronicle.core.time",
       "net.openhft.chronicle.core.util",
-      "net.openhft.chronicle.core.values",
-      "net.openhft.chronicle.core.watcher"
+      "net.openhft.chronicle.core.values"
     ],
     "net.openhft:chronicle-map": [
       "net.openhft.chronicle.hash",
@@ -452,8 +454,6 @@
       "net.openhft.chronicle.hash.serialization",
       "net.openhft.chronicle.hash.serialization.impl",
       "net.openhft.chronicle.map",
-      "net.openhft.chronicle.map.channel",
-      "net.openhft.chronicle.map.channel.internal",
       "net.openhft.chronicle.map.impl",
       "net.openhft.chronicle.map.impl.ret",
       "net.openhft.chronicle.map.impl.stage.data",
@@ -472,11 +472,13 @@
       "net.openhft.chronicle.set",
       "net.openhft.chronicle.set.internal",
       "net.openhft.chronicle.set.replication",
+      "net.openhft.sg",
       "net.openhft.xstream.converters",
       "net.openhft.xstream.converters.internal"
     ],
     "net.openhft:chronicle-threads": [
       "net.openhft.chronicle.threads",
+      "net.openhft.chronicle.threads.example",
       "net.openhft.chronicle.threads.internal"
     ],
     "net.openhft:chronicle-values": [
@@ -485,12 +487,6 @@
     ],
     "net.openhft:chronicle-wire": [
       "net.openhft.chronicle.wire",
-      "net.openhft.chronicle.wire.channel",
-      "net.openhft.chronicle.wire.channel.echo",
-      "net.openhft.chronicle.wire.channel.echo.internal",
-      "net.openhft.chronicle.wire.channel.impl",
-      "net.openhft.chronicle.wire.channel.impl.internal",
-      "net.openhft.chronicle.wire.channel.impl.tcp",
       "net.openhft.chronicle.wire.converter",
       "net.openhft.chronicle.wire.domestic",
       "net.openhft.chronicle.wire.domestic.extractor",

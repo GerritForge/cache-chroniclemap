@@ -19,6 +19,7 @@ import com.google.gerrit.metrics.MetricMaker;
 import com.google.gerrit.server.cache.PersistentCache;
 import com.google.gerrit.server.cache.PersistentCacheDef;
 import com.google.gerrit.server.util.time.TimeUtil;
+import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.Duration;
@@ -122,8 +123,11 @@ public class ChronicleMapCacheImpl<K, V> extends AbstractLoadingCache<K, V>
             + "cache, since the file size is pre-allocated rather than being "
             + "a function of the number of entries in the cache",
         def.diskLimit(), def.name());
+    File cacheFile = config.getCacheFile();
     ChronicleMap<KeyWrapper<K>, TimedValue<V>> store =
-        mapBuilder.createOrRecoverPersistedTo(config.getCacheFile());
+        cacheFile.exists()
+            ? mapBuilder.recoverPersistedTo(cacheFile, false)
+            : mapBuilder.createPersistedTo(cacheFile);
 
     logger.atInfo().log(
         "Initialized '%s'|version: %s|avgKeySize: %s bytes|avgValueSize:"
