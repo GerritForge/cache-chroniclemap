@@ -51,7 +51,7 @@ public class TimedValueMarshaller<V> extends SerializationMetricsForCache
 
   @SuppressWarnings("rawtypes")
   @Override
-  public TimedValue<V> read(Bytes in, TimedValue<V> using) {
+  public TimedValue<V> read(Bytes<?> in, TimedValue<V> using) {
     try (Timer0.Context timer = metrics.deserializeLatency.start()) {
       byte[] bytesBuffer = staticBuffer.get();
       in.read(bytesBuffer);
@@ -76,7 +76,7 @@ public class TimedValueMarshaller<V> extends SerializationMetricsForCache
 
   @SuppressWarnings("rawtypes")
   @Override
-  public void write(Bytes out, TimedValue<V> toWrite) {
+  public void write(Bytes<?> out, TimedValue<V> toWrite) {
     try (Timer0.Context timer = metrics.serializeLatency.start()) {
       byte[] serialized = cacheSerializer.serialize(toWrite.getValue());
 
