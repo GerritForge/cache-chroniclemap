@@ -1,30 +1,30 @@
 load(
     "@com_googlesource_gerrit_bazlets//:gerrit_plugin.bzl",
     "gerrit_plugin",
-    "gerrit_plugin_dependency_tests",
-    "gerrit_plugin_test_util",
     "gerrit_plugin_tests",
 )
 load("@rules_java//java:defs.bzl", "java_library")
 
+PLUGIN = "cache-chroniclemap"
+
 # Only the Chronicle modules whose types appear in `import` statements need to
-# be listed here; the rest (algorithms, threads, values, wire, compiler,
-# affinity, posix, jna, jna-platform, javapoet) are pulled in transitively
-# at runtime via chronicle-map's Maven POM and end up bundled into the plugin
-# JAR regardless. Bazel's strict_java_deps enforces only this direct subset.
-PLUGIN_DEPS = [
-    "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_bytes",
-    "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_core",
-    "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_map",
-    "@cache-chroniclemap_plugin_deps//:net_openhft_compiler",
+# be listed here; the rest (algorithms, threads, values, wire, affinity, posix,
+# jna, jna-platform, javapoet) are pulled in transitively at runtime via
+# chronicle-map's Maven POM and end up bundled into the plugin JAR regardless.
+# Bazel's strict_java_deps enforces only this direct subset.
+EXT_DEPS = [
+    "net.openhft:chronicle-bytes",
+    "net.openhft:chronicle-core",
+    "net.openhft:chronicle-map",
+    "net.openhft:compiler",
 ]
 
-# chronicle-values invokes javac at runtime to generate value-type
-# subclasses; javac needs org.jetbrains.annotations.{NotNull,Nullable} on
-# the classpath to resolve inherited chronicle signatures. Declared
-# `provided` in chronicle's parent POM, so not pulled transitively.
-RUNTIME_BUNDLED_DEPS = [
-    "@cache-chroniclemap_plugin_deps//:org_jetbrains_annotations",
+# chronicle-values invokes javac at runtime to generate value-type subclasses;
+# javac needs org.jetbrains.annotations.{NotNull,Nullable} on the classpath to
+# resolve inherited chronicle signatures. Declared `provided` in chronicle's
+# parent POM, so not pulled transitively.
+RUNTIME_BUNDLED_EXT_DEPS = [
+    "org.jetbrains:annotations",
 ]
 
 # Compile-only access to artifacts that Gerrit's runtime classpath already
@@ -32,7 +32,7 @@ RUNTIME_BUNDLED_DEPS = [
 # (the overlap test would otherwise fail).
 java_library(
     name = "provided-deps-neverlink",
-    neverlink = 1,
+    neverlink = True,
     exports = [
         "//lib:h2",
         "//lib/commons:io",
@@ -40,8 +40,6 @@ java_library(
         "//proto:cache_java_proto",
     ],
 )
-
-PROVIDED_DEPS = [":provided-deps-neverlink"]
 
 TEST_JVM_FLAGS = [
     "--add-exports=java.base/sun.nio.ch=ALL-UNNAMED",
@@ -56,54 +54,36 @@ TEST_JVM_FLAGS = [
 ]
 
 gerrit_plugin(
-    name = "cache-chroniclemap",
     srcs = glob(["src/main/java/**/*.java"]),
+    ext_deps = EXT_DEPS + RUNTIME_BUNDLED_EXT_DEPS,
     manifest_entries = [
         "Gerrit-Module: com.gerritforge.gerrit.modules.cache.chroniclemap.CapabilityModule",
         "Gerrit-SshModule: com.gerritforge.gerrit.modules.cache.chroniclemap.SSHCommandModule",
         "Gerrit-HttpModule: com.gerritforge.gerrit.modules.cache.chroniclemap.HttpModule",
     ],
+    plugin = PLUGIN,
     resources = glob(["src/main/resources/**/*"]),
-    deps = PLUGIN_DEPS + PROVIDED_DEPS + RUNTIME_BUNDLED_DEPS,
+    deps = [":provided-deps-neverlink"],
 )
 
 gerrit_plugin_tests(
-    name = "cache-chroniclemap_tests",
-    srcs = glob(
-        ["src/test/java/**/*Test.java"],
-    ),
+    srcs = glob(["src/test/java/**/*Test.java"]),
+    ext_deps = EXT_DEPS,
     jvm_flags = TEST_JVM_FLAGS,
-    visibility = ["//visibility:public"],
-    deps = [
-        ":cache-chroniclemap__plugin",
-        ":chroniclemap-test-lib",
-        "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_bytes",
-        "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_core",
-    ],
+    plugin = PLUGIN,
 )
 
 [gerrit_plugin_tests(
-    name = f[:f.index(".")].replace("/", "_"),
-    srcs = [f],
+    name = f.split("/")[-1][:-5],
+    srcs = [
+        f,
+        "src/test/java/com/gerritforge/gerrit/modules/cache/chroniclemap/TestPersistentCacheDef.java",
+    ],
+    ext_deps = EXT_DEPS,
     jvm_flags = TEST_JVM_FLAGS,
-    tags = ["server"],
+    plugin = PLUGIN,
     deps = [
-        ":cache-chroniclemap__plugin",
-        ":chroniclemap-test-lib",
         "//java/com/google/gerrit/server/cache/h2",
-        "//java/com/google/gerrit/server/cache/serialize",
         "//proto:cache_java_proto",
-        "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_bytes",
     ],
 ) for f in glob(["src/test/java/**/*IT.java"])]
-
-gerrit_plugin_test_util(
-    name = "chroniclemap-test-lib",
-    srcs = ["src/test/java/com/gerritforge/gerrit/modules/cache/chroniclemap/TestPersistentCacheDef.java"],
-    visibility = ["//visibility:public"],
-    deps = PLUGIN_DEPS + PROVIDED_DEPS + [
-        ":cache-chroniclemap__plugin",
-    ],
-)
-
-gerrit_plugin_dependency_tests(plugin = "cache-chroniclemap")

@@ -20,7 +20,9 @@ import com.google.inject.TypeLiteral;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.UUID;
+import org.junit.Ignore;
 
+@Ignore
 public class TestPersistentCacheDef implements PersistentCacheDef<String, String> {
 
   private static final Duration ONE_YEAR = Duration.ofDays(365);
