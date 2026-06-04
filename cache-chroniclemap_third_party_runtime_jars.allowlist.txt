@@ -1,4 +1,5 @@
 affinity
+annotations
 chronicle-algorithms
 chronicle-analytics
 chronicle-bytes

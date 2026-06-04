@@ -16,6 +16,15 @@ PLUGIN_DEPS = [
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_bytes",
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_core",
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_map",
+    "@cache-chroniclemap_plugin_deps//:net_openhft_compiler",
+]
+
+# chronicle-values invokes javac at runtime to generate value-type
+# subclasses; javac needs org.jetbrains.annotations.{NotNull,Nullable} on
+# the classpath to resolve inherited chronicle signatures. Declared
+# `provided` in chronicle's parent POM, so not pulled transitively.
+RUNTIME_BUNDLED_DEPS = [
+    "@cache-chroniclemap_plugin_deps//:org_jetbrains_annotations",
 ]
 
 # Compile-only access to artifacts that Gerrit's runtime classpath already
@@ -55,7 +64,7 @@ gerrit_plugin(
         "Gerrit-HttpModule: com.gerritforge.gerrit.modules.cache.chroniclemap.HttpModule",
     ],
     resources = glob(["src/main/resources/**/*"]),
-    deps = PLUGIN_DEPS + PROVIDED_DEPS,
+    deps = PLUGIN_DEPS + PROVIDED_DEPS + RUNTIME_BUNDLED_DEPS,
 )
 
 gerrit_plugin_tests(
