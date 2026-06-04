@@ -103,6 +103,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "90dee129_a751823b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-06-04T07:07:38Z",
+      "side": 1,
+      "message": "Apologies for the _fat finger_ in merging it, I thought that a green build means it works at runtime 😞",
+      "parentUuid": "c1ce1429_7196ddc2",
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "47e7b534_fb23def3",
         "filename": "MODULE.bazel.lock",
         "patchSetId": 2
