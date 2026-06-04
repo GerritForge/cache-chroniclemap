@@ -18,6 +18,17 @@ PLUGIN_DEPS = [
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_map",
 ]
 
+# Not imported by plugin sources, but must be on the plugin classpath at
+# runtime: chronicle-values invokes javac at runtime to generate value-type
+# subclasses, and javac needs to resolve org.jetbrains.annotations.{NotNull,
+# Nullable} on inherited chronicle signatures during code generation. Java
+# 25's javac fails symbol completion when the annotation class file is
+# missing; Java 21 silently tolerated it. Declared `provided` in chronicle's
+# parent POM, so rules_jvm_external does not bundle it transitively.
+RUNTIME_BUNDLED_DEPS = [
+    "@cache-chroniclemap_plugin_deps//:org_jetbrains_annotations",
+]
+
 # Compile-only access to artifacts that Gerrit's runtime classpath already
 # provides; wrap with neverlink so they do not get bundled into the plugin JAR
 # (the overlap test would otherwise fail).
@@ -55,7 +66,7 @@ gerrit_plugin(
         "Gerrit-HttpModule: com.gerritforge.gerrit.modules.cache.chroniclemap.HttpModule",
     ],
     resources = glob(["src/main/resources/**/*"]),
-    deps = PLUGIN_DEPS + PROVIDED_DEPS,
+    deps = PLUGIN_DEPS + PROVIDED_DEPS + RUNTIME_BUNDLED_DEPS,
 )
 
 gerrit_plugin_tests(
