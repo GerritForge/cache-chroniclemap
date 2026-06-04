@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31ebca14_b8b26c2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-04T14:55:51Z",
+      "side": 1,
+      "message": "I still get the error at runtime.\n\nThis change now packages the`org.jetbrains.annotations.NotNull` as part of the cache-chroniclemap.jar fat jar.\n\nHowever, we are only _packaging_ the dependency; we also need to make OpenHFT\u0027s runtime javac see it: apparently Chronicle\u0027s runtime javac does not compile through Gerrit\u0027s plugin classloader. It resolves symbols from `java.class.path`, so I believe we need to add the plugin jar to the classpath to make bundled classes like `org.jetbrains.annotations.NotNull` visible to that runtime compiler.\n\nSomething along the lines of [1]\n\n[1] https://review.gerrithub.io/c/GerritForge/cache-chroniclemap/+/1238548",
+      "revId": "ec142730f1a67785a264247f526f8fb2618d8da3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
