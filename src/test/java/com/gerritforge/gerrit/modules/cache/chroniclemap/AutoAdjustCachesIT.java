@@ -35,10 +35,13 @@ import com.google.gerrit.acceptance.config.GerritConfig;
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.server.ModuleImpl;
 import com.google.gerrit.server.cache.CacheModule;
+import com.google.gerrit.server.config.SitePaths;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
@@ -93,7 +96,11 @@ public class AutoAdjustCachesIT extends LightweightPluginDaemonTest {
       persist(TEST_CACHE_NAME, String.class, String.class)
           .loader(TestCacheLoader.class)
           .version(TEST_CACHE_VERSION);
-      install(new ChronicleMapCacheModule());
+      try {
+        install(new ChronicleMapCacheModule(new SitePaths(Paths.get("/tmp"))));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
     }
   }
 

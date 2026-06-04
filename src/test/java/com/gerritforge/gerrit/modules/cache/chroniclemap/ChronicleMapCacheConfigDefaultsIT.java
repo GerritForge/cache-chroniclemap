@@ -17,7 +17,10 @@ import com.google.gerrit.acceptance.AbstractDaemonTest;
 import com.google.gerrit.acceptance.UseLocalDisk;
 import com.google.gerrit.acceptance.UseSsh;
 import com.google.gerrit.acceptance.config.GerritConfig;
+import com.google.gerrit.server.config.SitePaths;
 import com.gerritforge.gerrit.modules.cache.chroniclemap.ChronicleMapCacheConfig.Defaults;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Set;
 import org.junit.Test;
 
@@ -29,7 +32,15 @@ public class ChronicleMapCacheConfigDefaultsIT extends AbstractDaemonTest {
     // CacheSerializers is accumulating cache names from different test executions in CI therefore
     // it has to be cleared before this test
     CacheSerializers.clear();
-    return new ChronicleMapCacheModule();
+    // SitePaths is only consulted to locate the libModule JAR for chronicle-values'
+    // runtime compiler classpath. In tests the JAR is on the test classpath, so a
+    // throwaway site path is sufficient; configure() skips registration when the
+    // derived JAR path doesn't exist on disk.
+    try {
+      return new ChronicleMapCacheModule(new SitePaths(Paths.get("/tmp")));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   @Test
