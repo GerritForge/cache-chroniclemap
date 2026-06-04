@@ -23,6 +23,7 @@ import com.google.inject.Singleton;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import net.openhft.compiler.CompilerUtils;
 import org.eclipse.jgit.lib.Config;
 
 @ModuleImpl(name = CacheModule.PERSISTENT_MODULE)
@@ -33,6 +34,12 @@ public class ChronicleMapCacheModule extends LifecycleModule {
   @Override
   protected void configure() {
     ChronicleMapCompatAliases.ensureRegistered();
+    CompilerUtils.addClassPath(
+        ChronicleMapCacheModule.class
+            .getProtectionDomain()
+            .getCodeSource()
+            .getLocation()
+            .getPath());
     factory(ChronicleMapCacheConfig.Factory.class);
     bind(PersistentCacheFactory.class).to(ChronicleMapCacheFactory.class);
     listener().to(ChronicleMapCacheFactory.class);

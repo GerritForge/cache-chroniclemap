@@ -16,6 +16,7 @@ PLUGIN_DEPS = [
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_bytes",
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_core",
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_map",
+    "@cache-chroniclemap_plugin_deps//:net_openhft_compiler",
 ]
 
 # Not imported by plugin sources, but must be on the plugin classpath at
