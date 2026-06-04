@@ -36,7 +36,7 @@ public class KeyWrapperMarshaller<V>
 
   @SuppressWarnings("rawtypes")
   @Override
-  public KeyWrapper<V> read(Bytes in, KeyWrapper<V> using) {
+  public KeyWrapper<V> read(Bytes<?> in, KeyWrapper<V> using) {
     int serializedLength = (int) in.readUnsignedInt();
     byte[] serialized = new byte[serializedLength];
     in.read(serialized, 0, serializedLength);
@@ -48,7 +48,7 @@ public class KeyWrapperMarshaller<V>
 
   @SuppressWarnings("rawtypes")
   @Override
-  public void write(Bytes out, KeyWrapper<V> toWrite) {
+  public void write(Bytes<?> out, KeyWrapper<V> toWrite) {
     final byte[] serialized = cacheSerializer.serialize(toWrite.getValue());
     out.writeUnsignedInt(serialized.length);
     out.write(serialized);
