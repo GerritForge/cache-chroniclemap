@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a0facd64_e7ec5cae",
+        "filename": ".bazelversion",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-06-05T22:09:12Z",
+      "side": 1,
+      "message": "Shall we then just create a symlink to the Gerrit\u0027s file rather than copy\u0026pasting it?\n\nWe can just include in the instructions rather than maintaining a copy of the file in all plugins\u0027 repositories.\n\nI see how they can get out of sync very easily.",
+      "parentUuid": "8dc9797c_02cee14d",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "47d612de_ee1651b6",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
