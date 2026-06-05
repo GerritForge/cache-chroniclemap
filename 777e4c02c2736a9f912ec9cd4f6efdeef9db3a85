@@ -46,6 +46,30 @@
       },
       "revId": "777e4c02c2736a9f912ec9cd4f6efdeef9db3a85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2e3ae2a_39580f5b",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-05T09:19:15Z",
+      "side": 1,
+      "message": "Exactly. You could fix it locally, by overloading the bazlets repository. Just clone bazlets, fetch my commits, and point to it during the build of this plugin, like this:\n\n```\n  bazel build plugins/cache-chroniclemap \\\n  --override_module\u003dcom_googlesource_gerrit_bazlets\u003d/path/to/local/bazlets\n```",
+      "parentUuid": "b285a49e_8ea0e0d2",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 1
+      },
+      "revId": "777e4c02c2736a9f912ec9cd4f6efdeef9db3a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
