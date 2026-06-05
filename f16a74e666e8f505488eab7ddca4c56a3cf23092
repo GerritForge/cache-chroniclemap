@@ -33,6 +33,24 @@
       "message": "This change works fine on java21.\nThe runtime error can be reproduced even without this fix by simply running the current version of master on java25.\n\nI have captured the issue [here](https://issues.gerritcodereview.com/issues/519646888), I think this change can be merged.",
       "revId": "f16a74e666e8f505488eab7ddca4c56a3cf23092",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33d718bf_8fb06017",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T08:54:33Z",
+      "side": 1,
+      "message": "I have now verified this manually and it runs correctly against java21.\nJava25 fix is captured by issue 519646888.",
+      "parentUuid": "5152da30_b968611c",
+      "revId": "f16a74e666e8f505488eab7ddca4c56a3cf23092",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
