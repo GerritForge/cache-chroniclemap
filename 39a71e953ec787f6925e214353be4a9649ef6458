@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cf9a416_0b63b157",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T09:12:37Z",
+      "side": 1,
+      "message": "nit: this code no longer match the implementation\nI think we can just refer to it loosely to convey the idea to the reader, without the *actual* line?",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 54
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca906f6_d868b4d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T09:12:37Z",
+      "side": 1,
+      "message": "This footer requires a blank line before and it caused the duplication of Change-Id.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 19
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c0ca6ff_89345e47",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T09:12:37Z",
+      "side": 1,
+      "message": "nit: redundant, we already say that this is all happening at runtime",
+      "range": {
+        "startLine": 23,
+        "startChar": 42,
+        "endLine": 23,
+        "endChar": 53
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4cbed71_83fb0e60",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T09:12:37Z",
+      "side": 1,
+      "message": "Since we now are on master, I think we can drop what the behavior _used_ to be on java21, as it is no longer interesting from now on?",
+      "range": {
+        "startLine": 25,
+        "startChar": 70,
+        "endLine": 27,
+        "endChar": 40
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f00dedf_69687ef7",
+        "filename": "MODULE.bazel",
+        "patchSetId": 5
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T09:12:37Z",
+      "side": 1,
+      "message": "Since we now are on master, I think we can drop what the behavior _used_ to be on java21, as it is no longer interesting from now on?",
+      "range": {
+        "startLine": 53,
+        "startChar": 36,
+        "endLine": 53,
+        "endChar": 74
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
