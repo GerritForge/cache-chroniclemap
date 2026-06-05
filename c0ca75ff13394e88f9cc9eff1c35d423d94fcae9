@@ -93,6 +93,30 @@
       },
       "revId": "c0ca75ff13394e88f9cc9eff1c35d423d94fcae9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45bed98c_441b4d58",
+        "filename": "src/main/java/com/gerritforge/gerrit/modules/cache/chroniclemap/ChronicleMapCacheModule.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-05T07:20:37Z",
+      "side": 1,
+      "message": "Test wiring required adjustment.\n\nThree ITs construct the module directly (new ChronicleMapCacheModule() in createModule() / inside a configure() block), bypassing Guice. They now pass a throwaway new SitePaths(Paths.get(\"/tmp\")) wrapped in try/catch (SitePaths\u0027 constructor declares throws IOException).\n\nTo keep this safe, configure() skips addClassPath registration when the derived JAR path doesn\u0027t exist — in tests the libModule is on the test classpath anyway, so the workaround isn\u0027t needed there.\n\nHappy to revert to the original getCodeSource() lookup if you\u0027d prefer to avoid the hardcoded filename + test-side try/catch — that variant is one self-contained block in one file with no caller fanout. Just let me know.",
+      "parentUuid": "cdde30b7_7ed0fc0f",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 31
+      },
+      "revId": "c0ca75ff13394e88f9cc9eff1c35d423d94fcae9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
