@@ -22,6 +22,30 @@
       },
       "revId": "777e4c02c2736a9f912ec9cd4f6efdeef9db3a85",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b285a49e_8ea0e0d2",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-05T08:57:40Z",
+      "side": 1,
+      "message": "Is this causing the failure? or is that underlated?\n\n```\nERROR: /home/jenkins/workspace/iclemap-verifier-gh_49_1238549_1/gerrit/plugins/cache-chroniclemap/BUILD:100:24: //plugins/cache-chroniclemap:chroniclemap-test-lib: no such attribute \u0027ext_deps\u0027 in \u0027java_library\u0027 rule\nERROR: /home/jenkins/workspace/iclemap-verifier-gh_49_1238549_1/gerrit/plugins/cache-chroniclemap/BUILD:100:24: //plugins/cache-chroniclemap:chroniclemap-test-lib: no such attribute \u0027plugin\u0027 in \u0027java_library\u0027 rule (did you mean \u0027plugins\u0027?)\nERROR: package contains errors: plugins/cache-chroniclemap\nERROR: package contains errors: plugins/cache-chroniclemap: //plugins/cache-chroniclemap:chroniclemap-test-lib: no such attribute \u0027ext_deps\u0027 in \u0027java_library\u0027 rule\nWARNING: Target pattern parsing failed.\nERROR: Skipping \u0027plugins/cache-chroniclemap/...\u0027: Error evaluating \u0027plugins/cache-chroniclemap/...\u0027: error loading package \u0027plugins/cache-chroniclemap\u0027: Package \u0027plugins/cache-chroniclemap\u0027 contains errors\nERROR: Error evaluating \u0027plugins/cache-chroniclemap/...\u0027: error loading package \u0027plugins/cache-chroniclemap\u0027: Package \u0027plugins/cache-chroniclemap\u0027 contains errors\n```",
+      "parentUuid": "74d899fb_f9936f52",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 1
+      },
+      "revId": "777e4c02c2736a9f912ec9cd4f6efdeef9db3a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
