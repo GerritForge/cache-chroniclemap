@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74d899fb_f9936f52",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-05T07:58:28Z",
+      "side": 1,
+      "message": "Note to the reviewer: this macros was extended in `bazlets`, but it wasn\u0027t merged yet, and gerrit wasn\u0027t bumped to use it (two separate commits are needed).",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 1
+      },
+      "revId": "777e4c02c2736a9f912ec9cd4f6efdeef9db3a85",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
