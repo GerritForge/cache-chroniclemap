@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64f615e6_702b9394",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-06-07T09:03:24Z",
+      "side": 1,
+      "message": "Tested the dependencies lockfiles generation example commands and works as expected E2E, without having to check-in the `.bazelversion` into the source tree repository.",
+      "revId": "99bab9b0a09c678aaa58209357daa019c9a23982",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
