@@ -72,6 +72,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0db0915f_1e47beb5",
+        "filename": ".bazelversion",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-06-07T08:21:58Z",
+      "side": 1,
+      "message": "Amended as we did on the github plugin: rather than copying, we simply symlink the `.bazelversion` from Gerrit source tree.",
+      "parentUuid": "a0facd64_e7ec5cae",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "235011a3be8467ba897a7122f97a62955063a1d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "47d612de_ee1651b6",
