@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "618c2c69_0826aaf1",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-10T13:10:39Z",
+      "side": 1,
+      "message": "One change was reverted in bazlets so that this wouldn\u0027t work any more, see: [1].\n\n[1]: https://gerrit-review.googlesource.com/c/gerrit/+/593241",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 24
+      },
+      "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
