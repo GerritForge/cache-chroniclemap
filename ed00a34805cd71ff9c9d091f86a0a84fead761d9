@@ -33,6 +33,75 @@
       "message": "This is failing for:\n\n```\nERROR: /home/jenkins/workspace/iclemap-verifier-gh_49_1238549_2/gerrit/plugins/cache-chroniclemap/BUILD:73:21: in deps attribute of java_test rule //plugins/cache-chroniclemap:src_test_java_com_gerritforge_gerrit_modules_cache_chroniclemap_ChronicleMapCacheConfigDefaultsIT: target \u0027//plugins/cache-chroniclemap:cache-chroniclemap__plugin_test_deps\u0027 does not exist. Since this rule was created by the macro \u0027gerrit_plugin_tests\u0027, the error might have been caused by the macro implementation\n```",
       "revId": "ed00a34805cd71ff9c9d091f86a0a84fead761d9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0dca63e_e9acc48d",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-10T09:06:01Z",
+      "side": 1,
+      "message": "```suggestion\n    ext_deps \u003d EXT_DEPS,\n    jvm_flags \u003d TEST_JVM_FLAGS,\n```",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 31
+      },
+      "revId": "ed00a34805cd71ff9c9d091f86a0a84fead761d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2025044d_193a8ee1",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-10T09:06:01Z",
+      "side": 1,
+      "message": "After fixing the `cache-chroniclemap__plugin_test_deps` issue, the tests still not pass for me with:\n\n```\nError in java_runtime_jars_manifest: java_runtime_jars_manifest rule \u0027cache-chroniclemap_dependency_allowlist_test_manifest\u0027 conflicts with existing java_runtime_jars_manifest rule, defined at /Users/syntonyze/dev/source/gerrit-4/plugins/cache-chroniclemap/BUILD:63:20\n```\n\nSetting `skip_dependency_tests` works for me and all tests pass locally:\n\n```suggestion\n    plugin \u003d PLUGIN,\n    skip_dependency_tests \u003d True,\n```\n\nSo that the dependency checks are generated only once by the main `cache-chroniclemap_tests` target, without creating duplicate Bazel targets per each IT test?",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 20
+      },
+      "revId": "ed00a34805cd71ff9c9d091f86a0a84fead761d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0df0c68b_6d0a3ed8",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-10T09:06:01Z",
+      "side": 1,
+      "message": "```suggestion\n```",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 48
+      },
+      "revId": "ed00a34805cd71ff9c9d091f86a0a84fead761d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
