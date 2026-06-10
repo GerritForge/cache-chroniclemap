@@ -22,6 +22,30 @@
       },
       "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04db28a7_d6317335",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-10T13:13:17Z",
+      "side": 1,
+      "message": "I see. That change is not merged yet.\nLet\u0027s recheck this plugin builds and tests correctly on the latest bazlets once it is merged.",
+      "parentUuid": "618c2c69_0826aaf1",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 24
+      },
+      "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
