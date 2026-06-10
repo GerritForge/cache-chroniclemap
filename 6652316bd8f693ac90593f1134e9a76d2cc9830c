@@ -46,6 +46,30 @@
       },
       "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e82c3ee3_d8cc0d1a",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2026-06-10T14:07:25Z",
+      "side": 1,
+      "message": "\u003e One change was reverted in bazlets\n\nWhy was the change reverted? I didn\u0027t find anything in the description of the revert.",
+      "parentUuid": "04db28a7_d6317335",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 24
+      },
+      "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
