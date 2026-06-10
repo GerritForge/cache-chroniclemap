@@ -16,6 +16,23 @@
       "message": "Note to the reviews: my additional change in `bazlets` repository was merged and `bazlets` version was bumped in gerrit. PTAL.",
       "revId": "ed00a34805cd71ff9c9d091f86a0a84fead761d9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c89e4035_9d5b5404",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-10T08:52:48Z",
+      "side": 1,
+      "message": "This is failing for:\n\n```\nERROR: /home/jenkins/workspace/iclemap-verifier-gh_49_1238549_2/gerrit/plugins/cache-chroniclemap/BUILD:73:21: in deps attribute of java_test rule //plugins/cache-chroniclemap:src_test_java_com_gerritforge_gerrit_modules_cache_chroniclemap_ChronicleMapCacheConfigDefaultsIT: target \u0027//plugins/cache-chroniclemap:cache-chroniclemap__plugin_test_deps\u0027 does not exist. Since this rule was created by the macro \u0027gerrit_plugin_tests\u0027, the error might have been caused by the macro implementation\n```",
+      "revId": "ed00a34805cd71ff9c9d091f86a0a84fead761d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
