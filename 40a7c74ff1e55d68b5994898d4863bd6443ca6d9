@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d6c480c_834e6da2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1015244
+      },
+      "writtenOn": "2026-06-11T09:48:09Z",
+      "side": 1,
+      "message": "Build is green.\nAlso tested it locally: plugin loads and works as expected on Java25 🥳",
+      "revId": "40a7c74ff1e55d68b5994898d4863bd6443ca6d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
