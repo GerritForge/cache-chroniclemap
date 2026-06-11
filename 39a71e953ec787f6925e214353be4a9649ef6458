@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "89826f05_b1aa311f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-11T07:31:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cf9a416_0b63b157",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 54
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6ca906f6_d868b4d7",
@@ -37,6 +61,30 @@
       "writtenOn": "2026-06-05T09:12:37Z",
       "side": 1,
       "message": "This footer requires a blank line before and it caused the duplication of Change-Id.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 19
+      },
+      "revId": "39a71e953ec787f6925e214353be4a9649ef6458",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "493e121b_ce73fc50",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-11T07:31:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ca906f6_d868b4d7",
       "range": {
         "startLine": 76,
         "startChar": 0,
