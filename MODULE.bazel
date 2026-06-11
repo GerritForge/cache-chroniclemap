@@ -17,8 +17,6 @@ CHRONICLE_BYTES_VER = "2026.2"
 
 CHRONICLE_ALGORITHMS_VER = "2026.2"
 
-CHRONICLE_VALUES_VER = "2026.2"
-
 CHRONICLE_THREADS_VER = "2026.2"
 
 CHRONICLE_COMPILER_VER = "2026.2"
@@ -32,6 +30,16 @@ JNA_VER = "5.5.0"
 maven.install(
     name = "cache-chroniclemap_plugin_deps",
     artifacts = [
+        # JitPack-built fork of chronicle-values 2026.2 carrying the JDK 25 fix
+        # from OpenHFT/Chronicle-Values#178 (preload jetbrains annotations in
+        # MyJavaFileManager). Same Maven coordinates and class graph as upstream
+        # chronicle-values 2026.2 -- chronicle-map's transitive reference to
+        # net.openhft:chronicle-values is satisfied by the contents of this JAR
+        # at runtime; we exclude the upstream coordinate below to avoid
+        # duplicate-class shadowing.
+        # TODO(davido): Switch back to net.openhft:chronicle-values:<next> when
+        # #178 merges upstream and ships in a Chronicle release.
+        "com.github.davido:Chronicle-Values:c931bace3c",
         "com.squareup:javapoet:1.13.0",
         "net.java.dev.jna:jna:" + JNA_VER,
         "net.java.dev.jna:jna-platform:" + JNA_VER,
@@ -41,20 +49,15 @@ maven.install(
         "net.openhft:chronicle-core:" + CHRONICLE_CORE_VER,
         "net.openhft:chronicle-map:" + CHRONICLE_MAP_VER,
         "net.openhft:chronicle-threads:" + CHRONICLE_THREADS_VER,
-        "net.openhft:chronicle-values:" + CHRONICLE_VALUES_VER,
         "net.openhft:chronicle-wire:" + CHRONICLE_WIRE_VER,
-        "net.openhft:compiler:" + CHRONICLE_COMPILER_VER,
         "net.openhft:posix:" + CHRONICLE_POSIX_VER,
-        # chronicle's parent POM marks this `provided`, so rules_jvm_external
-        # filters it out of transitive resolution. Pin explicitly: chronicle-
-        # values invokes javac at runtime to generate value-type subclasses and
-        # needs the annotation classes on the plugin classpath to complete
-        # symbol resolution on inherited @NotNull/@Nullable signatures
-        # (Java 25's javac is strict; Java 21 tolerated the missing symbol).
-        "org.jetbrains:annotations:24.1.0",
     ],
     duplicate_version_warning = "error",
     excluded_artifacts = [
+        # Suppress transitive resolution of upstream chronicle-values pulled in
+        # by chronicle-map's POM; the JitPack-built fork above provides the same
+        # net.openhft.chronicle.values.* classes plus the JDK 25 fix.
+        "net.openhft:chronicle-values",
         "org.ow2.asm:asm",
         "org.slf4j:slf4j-api",
     ],
@@ -64,6 +67,7 @@ maven.install(
     lock_file = "//:cache-chroniclemap_plugin_deps.lock.json",
     repositories = [
         "https://repo1.maven.org/maven2",
+        "https://jitpack.io",
     ],
     version_conflict_policy = "pinned",
 )

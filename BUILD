@@ -16,15 +16,15 @@ PLUGIN_DEPS = [
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_bytes",
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_core",
     "@cache-chroniclemap_plugin_deps//:net_openhft_chronicle_map",
-    "@cache-chroniclemap_plugin_deps//:net_openhft_compiler",
 ]
 
-# chronicle-values invokes javac at runtime to generate value-type
-# subclasses; javac needs org.jetbrains.annotations.{NotNull,Nullable} on
-# the classpath to resolve inherited chronicle signatures. Declared
-# `provided` in chronicle's parent POM, so not pulled transitively.
+# JitPack-built fork of chronicle-values 2026.2 carrying the JDK 25 fix.
+# Reached transitively at runtime by chronicle-map (which references
+# net.openhft:chronicle-values); we excluded the upstream coordinate in
+# MODULE.bazel, so we must include this JAR explicitly to keep its classes
+# on the plugin's runtime classpath.
 RUNTIME_BUNDLED_DEPS = [
-    "@cache-chroniclemap_plugin_deps//:org_jetbrains_annotations",
+    "@cache-chroniclemap_plugin_deps//:com_github_davido_Chronicle_Values",
 ]
 
 # Compile-only access to artifacts that Gerrit's runtime classpath already
