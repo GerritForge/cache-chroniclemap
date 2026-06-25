@@ -118,6 +118,30 @@
       },
       "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bd2bac1_93aea501",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-25T09:56:52Z",
+      "side": 1,
+      "message": "@syntonyze@gmail.com, @luca.milanesio@gmail.com\n\nThe relevant change was merged in `bazlets`. PTAL.",
+      "parentUuid": "8d74b3d0_5714bdea",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 24
+      },
+      "revId": "6652316bd8f693ac90593f1134e9a76d2cc9830c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
