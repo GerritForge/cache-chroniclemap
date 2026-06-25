@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "31498d76_1e1e43fc",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-25T13:37:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa1d11b4_14bd2809",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 21
+      },
+      "revId": "446818e75aba2521bec2723d2010413a5b032cb1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d4678038_1ca27aa4",
@@ -60,6 +84,54 @@
       "writtenOn": "2026-06-25T12:50:08Z",
       "side": 1,
       "message": "Is this removing the `.java` suffix?\n\nI find it a bit harder to read and understand, perhaps you can consider something more idiomatic, `.removesuffix(\".java\")`?\n\nBut again, is this really needed or is it just a nice-to-have?",
+      "range": {
+        "startLine": 77,
+        "startChar": 27,
+        "endLine": 77,
+        "endChar": 32
+      },
+      "revId": "446818e75aba2521bec2723d2010413a5b032cb1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "578a16c2_f5ecc0aa",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-25T13:37:39Z",
+      "side": 1,
+      "message": "Right, but two same class name in two different packages would be broken by design.",
+      "parentUuid": "d4678038_1ca27aa4",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 33
+      },
+      "revId": "446818e75aba2521bec2723d2010413a5b032cb1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "12751728_416075ea",
+        "filename": "BUILD",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-06-25T13:37:39Z",
+      "side": 1,
+      "message": "Reverted from this change. If at all it can be done in its own change.",
+      "parentUuid": "9808b3d6_b87dd284",
       "range": {
         "startLine": 77,
         "startChar": 27,
