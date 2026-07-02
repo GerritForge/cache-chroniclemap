@@ -35,6 +35,7 @@ gerrit_plugin(
         "@error-prone-annotations//jar",
         "@javapoet//jar",
         "@jna-platform//jar",
+        "//plugins/gerrit-bsl-license",
     ],
 )
 
