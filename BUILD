@@ -34,6 +34,7 @@ gerrit_plugin(
         "@external_deps//:com_google_errorprone_error_prone_annotations",
         "@javapoet//jar",
         "@jna-platform//jar",
+        "//plugins/gerrit-bsl-license",
     ],
 )
 
