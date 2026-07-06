@@ -38,6 +38,7 @@ java_library(
         "//lib/commons:io",
         "//lib/errorprone:annotations",
         "//proto:cache_java_proto",
+        "@external_deps//:org_jspecify_jspecify",
     ],
 )
 
