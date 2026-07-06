@@ -38,6 +38,7 @@ java_library(
         "//lib/commons:io",
         "//lib/errorprone:annotations",
         "//proto:cache_java_proto",
+        "@external_deps//:org_jspecify_jspecify",
     ],
 )
 
@@ -63,7 +64,10 @@ gerrit_plugin(
     ],
     plugin = PLUGIN,
     resources = glob(["src/main/resources/**/*"]),
-    deps = [":provided-deps-neverlink"],
+    deps = [
+        ":provided-deps-neverlink",
+        "//plugins/gerrit-bsl-license",
+    ],
 )
 
 gerrit_plugin_tests(
