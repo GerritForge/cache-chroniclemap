@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c0c7def_b4e8380e",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2026-07-06T10:05:43Z",
+      "side": 1,
+      "message": "Can\u0027t figure out why we need this, looking into it.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 49
+      },
+      "revId": "e43997788902a342bec1c177ebc91a6ed26e3d5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
