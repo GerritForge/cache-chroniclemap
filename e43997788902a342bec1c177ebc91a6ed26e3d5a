@@ -22,6 +22,30 @@
       },
       "revId": "e43997788902a342bec1c177ebc91a6ed26e3d5a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbcbe7e7_b647dff3",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2026-07-06T10:12:36Z",
+      "side": 1,
+      "message": "Treating this separately as part of Iede1340df, will come back to the merge-up once that\u0027s done.",
+      "parentUuid": "5c0c7def_b4e8380e",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 49
+      },
+      "revId": "e43997788902a342bec1c177ebc91a6ed26e3d5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
