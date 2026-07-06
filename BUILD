@@ -63,7 +63,10 @@ gerrit_plugin(
     ],
     plugin = PLUGIN,
     resources = glob(["src/main/resources/**/*"]),
-    deps = [":provided-deps-neverlink"],
+    deps = [
+        ":provided-deps-neverlink",
+        "//plugins/gerrit-bsl-license",
+    ],
 )
 
 gerrit_plugin_tests(
