@@ -9,6 +9,7 @@ chronicle-threads
 chronicle-values
 chronicle-wire
 compiler
+gerrit-bsl-license
 javapoet
 jffi
 jffi-1.3.12-native

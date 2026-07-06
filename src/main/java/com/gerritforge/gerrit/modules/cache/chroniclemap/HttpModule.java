@@ -27,6 +27,7 @@ public class HttpModule extends ServletModule {
 
   @Override
   protected void configureServlets() {
+    install(new com.gerritforge.gerrit.plugins.bsl.HttpModule());
     /*
      This module can be installed as a plugin, as a lib or both, depending on the wanted usage
      (refer to the docs for more details on why this is needed). For this reason, some binding
