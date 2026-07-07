@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff169aa7_40d5e01d",
+        "filename": "BUILD",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000177
+      },
+      "writtenOn": "2026-07-07T05:15:30Z",
+      "side": 1,
+      "message": "This is correct fix. Given that all plugins are affected that use auto-value, this should better be fixed gerrit core: [1].\n\nAlso we should always try to avoid specifying external repository coordinates `@external_deps//:org_jspecify_jspecify` and prefer stable label, like `//lib:jspecify`.\n\n[1]: https://gerrit-review.googlesource.com/c/gerrit/+/604421",
+      "range": {
+        "startLine": 41,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 49
+      },
+      "revId": "585052c8b5b79542d6024f1effd04754bf9be4c6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
