@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a73b920_6295790e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020677
+      },
+      "writtenOn": "2026-07-07T08:30:16Z",
+      "side": 1,
+      "message": "This has been fixed in Gerrit with I757dcfde5c",
+      "revId": "e43997788902a342bec1c177ebc91a6ed26e3d5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c0c7def_b4e8380e",
