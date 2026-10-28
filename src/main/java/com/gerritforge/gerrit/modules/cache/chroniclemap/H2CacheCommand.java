@@ -63,7 +63,7 @@ public class H2CacheCommand {
   protected static String jdbcUrl(Path h2FilePath) {
     final String normalized =
         FilenameUtils.removeExtension(FilenameUtils.removeExtension(h2FilePath.toString()));
-    return "jdbc:h2:" + normalized + ";AUTO_SERVER=TRUE;DATABASE_TO_UPPER=false";
+    return "jdbc:h2:" + normalized + ";AUTO_SERVER=TRUE";
   }
 
   protected static Optional<Path> getCacheDir(Config gerritConfig, SitePaths site)
