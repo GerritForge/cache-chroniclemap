@@ -15,6 +15,7 @@ package com.googlesource.gerrit.modules.cache.chroniclemap;
 
 import com.google.common.flogger.FluentLogger;
 import com.google.gerrit.server.config.SitePaths;
+import com.google.gerrit.server.util.H2Url;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -66,7 +67,7 @@ public class H2CacheCommand {
   protected static String jdbcUrl(Path h2FilePath) {
     final String normalized =
         FilenameUtils.removeExtension(FilenameUtils.removeExtension(h2FilePath.toString()));
-    return "jdbc:h2:" + normalized + ";AUTO_SERVER=TRUE;DATABASE_TO_UPPER=false";
+    return H2Url.ASYNC_PREFIX + normalized + ";AUTO_SERVER=TRUE;DATABASE_TO_UPPER=false";
   }
 
   protected static Optional<Path> getCacheDir(Config gerritConfig, SitePaths site)
